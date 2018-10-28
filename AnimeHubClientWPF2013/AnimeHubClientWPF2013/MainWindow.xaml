@@ -1,0 +1,57 @@
+﻿<Window x:Class="AnimeHubClientWPF2013.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        WindowStyle="SingleBorderWindow"
+        Title="AniHUB" 
+        MinHeight="400" MinWidth="500"
+        Height="1000" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Name="MenuColumn" Width="40" />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Column="0" Background="#FFE0DEDE">
+            <ListView Name="expander_lv" SelectionMode="Multiple" SelectionChanged="MenuExpand" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Background="#FFE0DEDE" >
+                <ListViewItem Name="ExpanderButton" Tag="expand" >
+                    <Image Name="expander_image" Width="30" Height="30" HorizontalAlignment="Right" Margin="0,0,-2,0" />
+                </ListViewItem>
+            </ListView>
+            <ListView Name="MenuList" SelectionMode="Single" SelectionChanged="MenuItemSelected" BorderThickness="0" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Background="#FFE0DEDE">
+                <ListViewItem Name="LogInButton" Tag="log_in">
+                    <StackPanel Orientation="Horizontal" Margin="-2,0,0,0">
+                        <Image Name="LogInButtonImage" Width="30" Height="30" HorizontalAlignment="Left" Margin="0,0,0,0" />
+                        <TextBlock Name="UserName" Text="Войти" FontSize="14" VerticalAlignment="Center" TextAlignment="Center" Margin="5"/>
+                    </StackPanel>
+                </ListViewItem>
+                <ListViewItem Name="CatalogButton" Tag="catalog">
+                    <StackPanel Orientation="Horizontal" Margin="-2,0,0,0">
+                        <Image Name="CatalogButtonImage" Width="30" Height="30" HorizontalAlignment="Left" Margin="0,0,0,0" />
+                        <TextBlock Text="Каталог" VerticalAlignment="Center" FontSize="14" Margin="5"/>
+                    </StackPanel>
+                </ListViewItem>
+                <ListViewItem Name="RandomButton" Tag="random">
+                    <StackPanel Orientation="Horizontal" Margin="-2,0,0,0">
+                        <Image Name="RandomButtonImage" Width="30" Height="30" HorizontalAlignment="Left" Margin="0,0,0,0" />
+                        <TextBlock Text="Случайное аниме" VerticalAlignment="Center" FontSize="14" Margin="5"/>
+                    </StackPanel>
+                </ListViewItem>
+                <ListViewItem Name="DownloadsButton" Tag="downloads">
+                    <StackPanel Orientation="Horizontal" Margin="-2,0,0,0">
+                        <Image Name="DownloadsButtonImage" Width="30" Height="30" HorizontalAlignment="Left" Margin="0,0,0,0" />
+                        <TextBlock Text="Загрузки" VerticalAlignment="Center" FontSize="14" Margin="5"/>
+                    </StackPanel>
+                </ListViewItem>
+                <ListViewItem Name="SettingsButton" Tag="settings">
+                    <StackPanel Orientation="Horizontal" Margin="-2,0,0,0">
+                        <Image Name="SettingsButtonImage" Width="30" Height="30"  HorizontalAlignment="Left" Margin="0,0,0,0" />
+                        <TextBlock Text="Настройки" VerticalAlignment="Center" FontSize="14" Margin="5"/>
+                    </StackPanel>
+                </ListViewItem>
+            </ListView>
+        </StackPanel>
+        <!--<Button Content="Новая анима" Height="40" Width="40" VerticalAlignment="Bottom" HorizontalAlignment="Center"/>-->
+        <Frame x:Name="ContentFrame" Grid.Column="1">
+        </Frame>
+
+    </Grid>
+</Window>
